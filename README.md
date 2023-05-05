@@ -28,5 +28,15 @@ O projeto está sendo implementado utilizando as seguintes tecnologias:
 
 ## Como Executar o Projeto
 
-...
+1. Clone o repositório para a sua máquina
 
+2. Se precisar crie e ative um ambiente virtual
+
+3. Instale as dependências do projeto:
+    > pip install -r requirements.txt
+ 
+4. Execute o servidor:
+    > py main.py
+
+5. Acesse o endereço do servidor:
+    > Ex: http://127.0.0.1:5000
