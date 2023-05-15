@@ -1,1 +1,1 @@
-alert("js it's working")
+console.log("js it's working")

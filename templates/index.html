@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Detecção de Moedas em Imagens</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+	<meta charset="UTF-8" />
+	<title>Detecção de Moedas em Imagens</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </head>
+
 <body>
 	<header>
 		<h1>Detecção de Moedas em Imagens</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<div class="container">
 		<form action="/detect" method="post" enctype="multipart/form-data">
 			<label for="image">Selecione uma imagem para detecção de moedas:</label>
-			<input type="file" id="image" name="image" accept="image/*">
+			<input type="file" id="image" name="image" accept="image/*" />
 			<button type="submit">Detectar Moedas</button>
 		</form>
 
 		{% if result %}
-			<img src="{{ result }}" alt="Imagem com detecção de moedas">
+		<img src="{{ result }}" alt="Imagem com detecção de moedas" />
 		{% endif %}
 	</div>
 </body>
+
 </html>
