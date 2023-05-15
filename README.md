@@ -2,11 +2,16 @@
 
 Este é um projeto de detecção de moedas em imagens que está sendo implementado na versão web com Flask.
 
-## Descrição do Projeto
+# Descrição do Projeto
 
 O objetivo deste projeto é criar uma ferramenta que possa detectar moedas em imagens e calcular o valor total das moedas na imagem. A detecção das moedas é feita utilizando técnicas de processamento de imagem e aprendizado de máquina.
 
-## Funcionalidades
+# Acesse ao projeto
+
+Você pode acessar o projeto pelo link:
+[https://coin-detector.onrender.com](https://coin-detector.onrender.com)
+
+# Funcionalidades
 
 Atualmente, o projeto possui as seguintes funcionalidades:
 
@@ -14,7 +19,7 @@ Atualmente, o projeto possui as seguintes funcionalidades:
 - Cálculo do valor total das moedas detectadas
 - Visualização da imagem com as moedas detectadas e o valor total
 
-## Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 O projeto está sendo implementado utilizando as seguintes tecnologias:
 
@@ -26,7 +31,7 @@ O projeto está sendo implementado utilizando as seguintes tecnologias:
 - OpenCV
 
 
-## Como Executar o Projeto
+# Como Executar o Projeto
 
 1. Clone o repositório para a sua máquina
 
