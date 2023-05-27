@@ -9,3 +9,4 @@ MarkupSafe
 numpy
 opencv-python
 Werkzeug
+roboflow

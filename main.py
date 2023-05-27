@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request
 import cv2
 import os
+from roboflow import Roboflow
 
 app = Flask(__name__)
+
+rf = Roboflow(api_key="52ZPGjDntv3smMG4Yr7b")
+project = rf.workspace().project("moedas-pmfos")
+model = project.version(9).model
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,16 +34,27 @@ def detect_coins():
     image_path = os.path.join(target, image_filename)
     image_file.save(image_path)
 
-    img = cv2.imread(image_path)
+    response = model.predict(image_path, confidence=70, overlap=30).json()
 
-    # Aplicar algoritmo de detecção de moedas
-    # ...
+    sum = 0
+    for pred in response['predictions']:
+        print(pred['class'])
+        if pred['class'] == '1 Real':
+            sum += 1
+        if pred['class'] == '50 Cent':
+            sum += 0.5
+        if pred['class'] == '25 Cent':
+            sum += 0.25
+        if pred['class'] == '10 Cent':
+            sum += 0.10
+        if pred['class'] == '5 Cent':
+            sum += 0.5
+    print("Valor total aproximado: R$" + str(sum))
 
-    # Guardar imagen com detecção de moedas
-    result_path = os.path.join(target, "result.jpg")
-    cv2.imwrite(result_path, img)
+    prediction_path = os.path.join(target, "prediction.jpg")
+    model.predict(image_path, confidence=70, overlap=30).save(prediction_path)
 
-    return render_template("index.html", result="static/result.jpg")
+    return render_template("index.html", result="static/prediction.jpg", value="Valor total aproximado: R$" + str(sum))
 
 @app.route("/error")
 def error():
@@ -46,5 +62,3 @@ def error():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# hehe bom demais
