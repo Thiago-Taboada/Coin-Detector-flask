@@ -1,3 +1,4 @@
+# Old project, pending updates.
 # Detecção de Moedas em Imagens
 
 Este é um projeto de detecção de moedas em imagens que está sendo implementado na versão web com Flask.
